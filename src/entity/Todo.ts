@@ -12,5 +12,5 @@ export class Todo {
   isDone: boolean;
 
   @Column({nullable: true})
-  expires: Date;
+  expiredAt: Date;
 }

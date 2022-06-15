@@ -7,7 +7,7 @@ AppDataSource.initialize()
     const todo = new Todo();
     todo.description = "Make awesome app";
     todo.isDone = false;
-    todo.expires = new Date();
+    todo.expiredAt = new Date();
     await AppDataSource.manager.save(todo);
     console.log("Saved a new user with id: " + todo.id);
 
