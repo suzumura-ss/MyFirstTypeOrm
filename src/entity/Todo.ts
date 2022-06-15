@@ -1,14 +1,16 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 export class Todo {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number
+  @Column()
+  description: string;
 
-    @Column()
-    description: string;
+  @Column()
+  isDone: boolean;
 
-    @Column()
-    isDone: boolean;
+  @Column({nullable: true})
+  expires: Date;
 }

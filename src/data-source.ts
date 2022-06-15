@@ -1,13 +1,13 @@
-import "reflect-metadata"
-import { DataSource } from "typeorm"
-import { Todo } from "./entity/Todo"
+import "reflect-metadata";
+import { DataSource } from "typeorm";
+import { Todo } from "./entity/Todo";
 
 export const AppDataSource = new DataSource({
-    type: 'sqlite',
-    database: './db/todo.sqlite3',
-    synchronize: true,
-    logging: false,
-    entities: [Todo],
-    migrations: [],
-    subscribers: [],
-})
+  type: "sqlite",
+  database: "./db/todo.sqlite3",
+  synchronize: true,
+  logging: false,
+  entities: [Todo],
+  migrations: [`${__dirname}/migration/*.ts`],
+  subscribers: [],
+});
