@@ -1,11 +1,13 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/User"
+import { Todo } from "./entity/Todo"
 
 export const AppDataSource = new DataSource({
+    type: 'sqlite',
+    database: './db/todo.sqlite3',
     synchronize: true,
     logging: false,
-    entities: [User],
+    entities: [Todo],
     migrations: [],
     subscribers: [],
 })
